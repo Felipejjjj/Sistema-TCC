@@ -102,3 +102,16 @@ class Trabalho(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+# Excluir um autor não pode deixar um trabalho sem autoria.
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.db.models.deletion import ProtectedError
+
+
+@receiver(pre_delete, sender=Autor)
+def proteger_autoria(sender, instance, **kwargs):
+    for trabalho in instance.trabalhos.all():
+        if trabalho.autores.count() <= 1:
+            raise ProtectedError('Autor é o único autor de um trabalho.', [trabalho])

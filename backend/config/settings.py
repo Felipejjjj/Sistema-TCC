@@ -14,7 +14,8 @@ MIDDLEWARE = ['corsheaders.middleware.CorsMiddleware',
               'django.middleware.security.SecurityMiddleware',
               'django.middleware.common.CommonMiddleware']
 ROOT_URLCONF = 'config.urls'
-TEMPLATES = []
+TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates',
+              'DIRS': [], 'APP_DIRS': True, 'OPTIONS': {}}]
 WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {'default': {'ENGINE': 'django.db.backends.sqlite3', 'NAME': BASE_DIR / 'db.sqlite3'}}
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
