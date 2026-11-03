@@ -1,10 +1,10 @@
 from django.urls import include, path
-from rest_framework.routers import DefaultRouter
+from rest_framework.routers import DefaultRouter, SimpleRouter
 from rest_framework.permissions import AllowAny
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 from catalogo import views
 
-publico = DefaultRouter()
+publico = SimpleRouter()
 publico.register('trabalhos', views.TrabalhoPublicoViewSet, basename='publico-trabalho')
 gestao = DefaultRouter()
 gestao.register('trabalhos', views.TrabalhoGestaoViewSet)

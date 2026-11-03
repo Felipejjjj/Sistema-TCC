@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="pt-BR">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Acervo | Catálogo de TCCs</title><link rel="stylesheet" href="styles.css"><script src="app.js" defer></script></head>
+<body>
+<header><a href="./" class="marca"><span class="simbolo">A.</span> Acervo <span class="separador">/</span> IFPB</a><span class="selo">CATÁLOGO ACADÊMICO</span></header>
+<main>
+<section class="introducao"><p class="eyebrow">CONHECIMENTO ABERTO</p><h1>Ideias que merecem<br>ser encontradas.</h1><p class="subtitulo">Explore os trabalhos de conclusão de curso.<br>Encontre pesquisas, descubra temas e conheça seus autores.</p></section>
+<section aria-label="Pesquisar acervo" class="busca"><form id="filtros"><label class="pesquisa">O que você quer descobrir?<input id="search" name="search" type="search" placeholder="Título, tema, autor ou orientador"></label><label>Ano<input id="ano" name="ano" type="number" min="1900" placeholder="Todos os anos"></label><label>Ordenar<select name="ordering"><option value="-ano">Mais recentes</option><option value="ano">Mais antigos</option><option value="titulo">Título A–Z</option><option value="-titulo">Título Z–A</option></select></label><button type="submit">Buscar <span aria-hidden="true">↗</span></button></form></section>
+<section aria-label="Resultados"><div class="cabecalho-resultados"><h2>Trabalhos publicados</h2><p id="contagem" aria-live="polite">Conectando ao acervo…</p></div><div id="status" role="status"></div><div id="trabalhos" class="grade"></div><nav class="paginacao" aria-label="Paginação"><button id="anterior" disabled>← Anterior</button><span id="pagina"></span><button id="proxima" disabled>Próxima →</button></nav></section>
+</main><footer><span>Acervo / IFPB</span><span>Ciência compartilhada. Novas possibilidades.</span></footer>
+<dialog id="detalhe" aria-labelledby="titulo-detalhe"><button id="fechar" class="fechar" aria-label="Fechar detalhe">×</button><div id="conteudo-detalhe"></div></dialog>
+</body></html>
